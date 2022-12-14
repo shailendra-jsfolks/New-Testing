@@ -15,6 +15,7 @@ export class Test1Component implements OnInit {
   user = "sailendra pandey";
 
   name() {
+    
     alert("name");
   }
 

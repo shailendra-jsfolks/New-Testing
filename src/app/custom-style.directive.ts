@@ -7,11 +7,12 @@ import { Test5Component } from './test5/test5.component';
 export class CustomStyleDirective {
 
   constructor(
-    // private el:ElementRef, 
-    private data: Test5Component) {
-    //  el.nativeElement.style.color ="red"
-    //  console.log(el.nativeElement);
-    //  el.nativeElement.textContent = "custom diractive"
+    private el:ElementRef, 
+    // private data: Test5Component
+    ) {
+     el.nativeElement.style.color ="red"
+     console.log(el.nativeElement);
+     el.nativeElement.textContent = "custom diractive"
 
     this.listdata();
       
@@ -22,15 +23,20 @@ export class CustomStyleDirective {
 
   listdata() {
 
-    console.log(this.data.name);
+    // console.log(this.data.name);
 
-    this.data.name = "custom diractive";
+    // this.data.name = "custom diractive";
     
-    // const dm = this.el.nativeElement as HTMLElement;
+    const dm = this.el.nativeElement as HTMLElement;
+    console.log(dm);
     
-      // dm.addEventListener("click", () => {
-        // alert("clicked")
-      // })
+    
+      dm.addEventListener("click", () => {
+        dm.innerHTML = "vatsal vaja"
+        dm.style.fontFamily = "cursive"
+        dm.className = "custom"
+        
+      })
      
 
    }
